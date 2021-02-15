@@ -14,11 +14,12 @@ const theme = {
   bg: {
     workspace: "#8bb0b5",
     desk: "#ac8968",
-    screen: "#141210",
+    laptop: "#141210",
+    keys: "#888888",
   },
   border: {
     desk: "#624e3c",
-    screen: "#141210",
+    laptop: "#141210",
   },
 };
 

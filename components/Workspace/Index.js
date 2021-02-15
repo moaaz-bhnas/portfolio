@@ -56,7 +56,7 @@ const Scene = styled.div`
   justify-content: center;
   align-items: flex-end;
   transform-style: preserve-3d;
-  perspective: 600px;
+  perspective: 750px;
   perspective-origin: 50% 10%;
   transition: perspective-origin 0.1s;
 `;

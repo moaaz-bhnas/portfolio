@@ -1,11 +1,13 @@
 import { memo } from "react";
 import styled from "styled-components";
+import Keyboard from "./components/Keyboard";
 import Screen from "./components/Screen";
 
 const Laptop = ({ width = 16 }) => {
   return (
     <StyledLaptop width={width}>
       <Screen width={width} />
+      <Keyboard width={width} />
     </StyledLaptop>
   );
 };
