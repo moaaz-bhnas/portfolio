@@ -1,0 +1,121 @@
+import { memo } from "react";
+import styled from "styled-components";
+
+const Portrait = ({ width = 14 }) => {
+  return (
+    <StyledPortrait width={width}>
+      <Thread />
+      <Thread />
+      <Front portraitWidth={width}>
+        <Image portraitWidth={width} alt="Moaaz Bhnas" />
+      </Front>
+      <Back portraitWidth={width} />
+      <Top portraitWidth={width} />
+      <Bottom portraitWidth={width} />
+      <Right portraitWidth={width} />
+      <Left portraitWidth={width} />
+    </StyledPortrait>
+  );
+};
+
+const portraitHeight = (width) => width * 0.7;
+const portraitDepth = (width) => width / 14;
+
+const StyledPortrait = styled.div`
+  display: none;
+  position: absolute;
+  width: ${({ width }) => `${width}em`};
+  height: ${({ width }) => `${portraitHeight(width)}em`};
+  transform-style: preserve-3d;
+  transform-origin: 50% -1.75em;
+  transform: translate3d(12em, -15em, -18em);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translate3d(12em, -15em, -18em) rotate(6deg);
+  }
+
+  @media (min-width: 545px) {
+    display: block;
+  }
+`;
+
+const Thread = styled.div`
+  position: absolute;
+  width: 0.15em;
+  height: 2.5em;
+  background-color: #3b2212;
+  transform-origin: 0 0;
+
+  &:nth-child(1) {
+    transform: translate3d(7em, -1.75em, 0) rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    transform: translate3d(7em, -1.75em, 0) rotate(-45deg);
+  }
+`;
+
+const Face = styled.div`
+  position: absolute;
+  background-color: ${({ theme }) => theme.bg.portrait};
+`;
+
+const Front = styled(Face)`
+  width: 100%;
+  height: 100%;
+  border: ${({ theme }) => `4px solid ${theme.border.portrait}`};
+  display: flex;
+  transform: ${({ portraitWidth }) =>
+    `translateZ(${portraitDepth(portraitWidth) / 2}em)`};
+`;
+
+const Image = styled.img`
+  width: ${({ portraitWidth }) => `${portraitWidth * 0.86}em`};
+  height: ${({ portraitWidth }) => `${portraitWidth * 0.57}em`};
+  object-fit: cover;
+  background-color: #fff;
+  box-shadow: inset 0 0 20px 0.5px rgba(0, 0, 0, 0.5);
+  margin: auto;
+`;
+
+const Back = styled(Face)`
+  width: 100%;
+  height: 100%;
+  transform: ${({ portraitWidth }) =>
+    `rotateY(180deg) translateZ(${portraitDepth(portraitWidth) / 2}em)`};
+`;
+
+const Top = styled(Face)`
+  width: 100%;
+  height: ${({ portraitWidth }) => `${portraitDepth(portraitWidth)}em`};
+  transform: ${({ portraitWidth }) =>
+    `rotateX(90deg) translateZ(${portraitDepth(portraitWidth) / 2}em)`};
+`;
+
+const Bottom = styled(Face)`
+  width: 100%;
+  height: ${({ portraitWidth }) => `${portraitDepth(portraitWidth)}em`};
+  transform: ${({ portraitWidth }) =>
+    `rotateX(-90deg) translateZ(${
+      portraitHeight(portraitWidth) - portraitDepth(portraitWidth) / 2
+    }em)`};
+`;
+
+const Right = styled(Face)`
+  width: ${({ portraitWidth }) => `${portraitDepth(portraitWidth)}em`};
+  height: 100%;
+  transform: ${({ portraitWidth }) =>
+    `rotateY(90deg) translateZ(${
+      portraitWidth - portraitDepth(portraitWidth) / 2
+    }em)`};
+`;
+
+const Left = styled(Face)`
+  width: ${({ portraitWidth }) => `${portraitDepth(portraitWidth)}em`};
+  height: 100%;
+  transform: ${({ portraitWidth }) =>
+    `rotateY(-90deg) translateZ(${portraitDepth(portraitWidth) / 2}em)`};
+`;
+
+export default memo(Portrait);

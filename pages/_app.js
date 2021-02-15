@@ -16,10 +16,12 @@ const theme = {
     desk: "#ac8968",
     laptop: "#141210",
     keys: "#888888",
+    portrait: "#222224",
   },
   border: {
     desk: "#624e3c",
     laptop: "#141210",
+    portrait: "#222224",
   },
 };
 

@@ -1,6 +1,8 @@
 import { memo } from "react";
 import Desk from "../Desk/Index";
 import Laptop from "../Laptop/Index";
+import Nail from "../Nail/Index";
+import Portrait from "../Portrait/Index";
 import styled from "styled-components";
 
 const Workspace = () => {
@@ -9,6 +11,8 @@ const Workspace = () => {
       <Scene>
         <Desk />
         <Laptop />
+        <Nail />
+        <Portrait />
       </Scene>
     </StyledWorkspace>
   );
@@ -17,6 +21,7 @@ const Workspace = () => {
 const StyledWorkspace = styled.div`
   font-size: 0.5rem;
   position: relative;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,13 +55,13 @@ const StyledWorkspace = styled.div`
 `;
 
 const Scene = styled.div`
-  height: 100vh;
+  height: 80vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   transform-style: preserve-3d;
-  perspective: 750px;
+  perspective: 600px;
   perspective-origin: 50% 10%;
   transition: perspective-origin 0.1s;
 `;
