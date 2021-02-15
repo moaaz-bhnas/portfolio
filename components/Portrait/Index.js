@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Portrait = ({ width = 14 }) => {
   return (
     <StyledPortrait width={width}>
-      <Thread />
-      <Thread />
+      <Thread portraitWidth={width} />
+      <Thread portraitWidth={width} />
       <Front portraitWidth={width}>
         <Image portraitWidth={width} alt="Moaaz Bhnas" />
       </Front>
@@ -28,11 +28,11 @@ const StyledPortrait = styled.div`
   height: ${({ width }) => `${portraitHeight(width)}em`};
   transform-style: preserve-3d;
   transform-origin: 50% -1.75em;
-  transform: translate3d(12em, -15em, -18em);
+  transform: translate3d(16em, -18em, -18em);
   transition: transform 0.3s;
 
   &:hover {
-    transform: translate3d(12em, -15em, -18em) rotate(6deg);
+    transform: translate3d(16em, -18em, -18em) rotate(6deg);
   }
 
   @media (min-width: 545px) {
@@ -48,11 +48,13 @@ const Thread = styled.div`
   transform-origin: 0 0;
 
   &:nth-child(1) {
-    transform: translate3d(7em, -1.75em, 0) rotate(45deg);
+    transform: ${({ portraitWidth }) =>
+      `translate3d(${portraitWidth / 2}em, -1.75em, 0) rotate(45deg)`};
   }
 
   &:nth-child(2) {
-    transform: translate3d(7em, -1.75em, 0) rotate(-45deg);
+    transform: ${({ portraitWidth }) =>
+      `translate3d(${portraitWidth / 2}em, -1.75em, 0) rotate(-45deg)`};
   }
 `;
 

@@ -17,7 +17,11 @@ const StyledLaptop = styled.div`
   height: ${({ width }) => `${width * 0.6}em`};
   position: absolute;
   transform-style: preserve-3d;
-  transform: translate3d(0em, -12em, -4em);
+  transform: translate3d(0em, -12.5em, -3em);
+
+  @media (min-width: 545px) {
+    transform: translate3d(-6em, -12.5em, -1.5em);
+  }
 `;
 
 export default memo(Laptop);

@@ -3,16 +3,18 @@ import Desk from "../Desk/Index";
 import Laptop from "../Laptop/Index";
 import Nail from "../Nail/Index";
 import Portrait from "../Portrait/Index";
+import Papers from "../Papers/Index";
 import styled from "styled-components";
 
 const Workspace = () => {
   return (
     <StyledWorkspace>
       <Scene>
-        <Desk />
+        <Desk width={42.5} />
         <Laptop />
         <Nail />
-        <Portrait />
+        <Portrait width={15} />
+        <Papers width={8} />
       </Scene>
     </StyledWorkspace>
   );
