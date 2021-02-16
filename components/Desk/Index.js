@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import sizes from "../../shared/sizes";
 
 const Desk = ({ width = 40 }) => {
@@ -19,6 +19,12 @@ const Desk = ({ width = 40 }) => {
 const deskHeight = (width) => width / 2;
 const deskDepth = (width) => width / 20;
 
+const slide = keyframes`
+  0% {
+    transform: rotateX(90deg) translateY(32em);
+  }
+`;
+
 const StyledDesk = styled.div`
   position: relative;
 
@@ -27,6 +33,8 @@ const StyledDesk = styled.div`
 
   transform-style: preserve-3d;
   transform: rotateX(90deg) translateY(0);
+
+  animation: ${slide} 0.6s cubic-bezier(0.48, 1.46, 0.68, 1) backwards;
 `;
 
 const Face = styled.div`

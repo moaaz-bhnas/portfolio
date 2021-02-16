@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Portrait = ({ width = 14 }) => {
   return (
@@ -21,6 +21,12 @@ const Portrait = ({ width = 14 }) => {
 const portraitHeight = (width) => width * 0.8;
 const portraitDepth = (width) => width / 14;
 
+const fall = keyframes`
+  0% {
+    transform: translate3d(16em, -50em, -18em);
+  }
+`;
+
 const StyledPortrait = styled.div`
   display: none;
   position: absolute;
@@ -30,6 +36,7 @@ const StyledPortrait = styled.div`
   transform-origin: 50% -1.75em;
   transform: translate3d(16em, -18em, -18em);
   transition: transform 0.3s;
+  animation: ${fall} 0.5s backwards 2.7s;
 
   &:hover {
     transform: translate3d(16em, -18em, -18em) rotate(6deg);

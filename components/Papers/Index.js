@@ -1,5 +1,6 @@
 import { memo } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import About from "./components/About";
 
 const Papers = ({ width = 7 }) => {
   return (
@@ -7,11 +8,19 @@ const Papers = ({ width = 7 }) => {
       {Array(6)
         .fill(null)
         .map((element, index) => (
-          <Paper key={index} className={`paper-${index + 1}`} />
+          <Paper key={index} className={`paper-${index + 1}`}>
+            {index === 5 && <About />}
+          </Paper>
         ))}
     </StyledPapers>
   );
 };
+
+const slide = keyframes`
+  0% {
+    transform: rotateX(90deg) translate3d(10em, 26rem, 6em);
+  }
+`;
 
 const StyledPapers = styled.div`
   display: none;
@@ -20,6 +29,8 @@ const StyledPapers = styled.div`
   height: ${({ width }) => `${width * 1.4}em`};
   transform-style: preserve-3d;
   transform: rotateX(90deg) translate3d(10em, 4em, 7em);
+
+  animation: ${slide} 1s backwards 1.8s;
 
   &:hover {
     .paper-3 {
@@ -61,6 +72,9 @@ const Paper = styled.div`
   &.paper-6 {
     transform: rotateZ(0) translateZ(0.04em);
     transform-origin: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 `;
 

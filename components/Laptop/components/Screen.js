@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import sizes from "../../../shared/sizes";
 import Viewport from "./Viewport";
 
@@ -22,6 +22,12 @@ const Screen = ({ width = 16 }) => {
 const screenHeight = (width) => width * 0.6;
 const screenDepth = (width) => width * 0.05;
 
+const open = keyframes`
+  0% {
+    transform: rotateX(-90deg) translate3d(0, -0.4em, -0.4em);
+  }
+`;
+
 const StyledScreen = styled.div`
   width: ${({ width }) => `${width}em`};
   height: ${({ width }) => `${screenHeight(width)}em`};
@@ -30,6 +36,7 @@ const StyledScreen = styled.div`
   transform-origin: 50% 100%;
   transform: rotateX(0) translate3d(0, 0, 0);
   transition: transform 0.4s;
+  animation: ${open} 0.8s backwards 1.2s;
 
   &:hover {
     transform: rotateX(8deg) translate3d(0, 0, 0);

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import sizes from "../../../shared/sizes";
 
 const Viewport = ({ screenWidth }) => {
@@ -16,8 +16,14 @@ const Viewport = ({ screenWidth }) => {
 const screenHeight = (width) => width * 0.6;
 const screenFrame = (screenWidth) => screenWidth * 0.125;
 
+const turnOn = keyframes`
+  0% {
+    opacity: 0;
+  }
+`;
+
 const StyledViewport = styled.div`
-  padding: 1em;
+  padding: 0.8em 1em;
   margin: auto;
   width: ${({ screenWidth }) => `${screenWidth - screenFrame(screenWidth)}em`};
   height: ${({ screenWidth }) =>
@@ -29,10 +35,12 @@ const StyledViewport = styled.div`
     `${sizes.border.default} solid ${theme.border.laptop}`};
   display: flex;
   flex-direction: column;
+
+  animation: ${turnOn} 0s backwards 2s;
 `;
 
 const P = styled.p`
-  margin: 0 0 0.65em 0;
+  margin: 0 0 0.7em 0;
 `;
 
 const Link = styled.a`
