@@ -1,6 +1,7 @@
 import { memo } from "react";
 import styled from "styled-components";
 import sizes from "../../../shared/sizes";
+import Viewport from "./Viewport";
 
 const Screen = ({ width = 16 }) => {
   return (
@@ -87,20 +88,6 @@ const Left = styled(Face)`
   height: 100%;
   transform: ${({ screenWidth }) =>
     `rotateY(-90deg) translateZ(${screenDepth(screenWidth) / 2}em)`};
-`;
-
-const screenFrame = (screenWidth) => screenWidth * 0.125;
-
-const Viewport = styled.div`
-  margin: auto;
-  width: ${({ screenWidth }) => `${screenWidth - screenFrame(screenWidth)}em`};
-  height: ${({ screenWidth }) =>
-    `${screenHeight(screenWidth) - screenFrame(screenWidth)}em`};
-  /* background: #eee url(images/tag.svg) no-repeat 50% 50%; */
-  background-size: 5em 5em;
-  box-shadow: inset 0 0 20px 3px rgba(0, 0, 0, 0.5);
-  border: ${({ theme }) =>
-    `${sizes.border.default} solid ${theme.border.laptop}`};
 `;
 
 export default memo(Screen);

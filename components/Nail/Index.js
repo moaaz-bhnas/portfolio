@@ -12,7 +12,7 @@ const StyledNail = styled.div`
   height: 0.4em;
   border-radius: 50%;
   background-color: #3b2212;
-  transform: translate3d(16.1em, -30em, -18em);
+  transform: translate3d(16.1em, -31.4em, -18em);
   @media (min-width: 545px) {
     display: block;
   }

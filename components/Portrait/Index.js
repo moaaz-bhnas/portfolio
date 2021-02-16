@@ -7,7 +7,7 @@ const Portrait = ({ width = 14 }) => {
       <Thread portraitWidth={width} />
       <Thread portraitWidth={width} />
       <Front portraitWidth={width}>
-        <Image portraitWidth={width} alt="Moaaz Bhnas" />
+        <Image portraitWidth={width} src="/me.jpg" alt="Moaaz Bhnas" />
       </Front>
       <Back portraitWidth={width} />
       <Top portraitWidth={width} />
@@ -18,7 +18,7 @@ const Portrait = ({ width = 14 }) => {
   );
 };
 
-const portraitHeight = (width) => width * 0.7;
+const portraitHeight = (width) => width * 0.8;
 const portraitDepth = (width) => width / 14;
 
 const StyledPortrait = styled.div`
@@ -74,8 +74,9 @@ const Front = styled(Face)`
 
 const Image = styled.img`
   width: ${({ portraitWidth }) => `${portraitWidth * 0.86}em`};
-  height: ${({ portraitWidth }) => `${portraitWidth * 0.57}em`};
+  height: ${({ portraitWidth }) => `${portraitWidth * 0.64}em`};
   object-fit: cover;
+  object-position: 50% 30%;
   background-color: #fff;
   box-shadow: inset 0 0 20px 0.5px rgba(0, 0, 0, 0.5);
   margin: auto;
