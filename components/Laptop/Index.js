@@ -28,7 +28,7 @@ const StyledLaptop = styled.div`
   animation: ${slide} 0.6s cubic-bezier(0.48, 1.46, 0.68, 1) 0.6s backwards;
 
   @media (min-width: 545px) {
-    transform: translate3d(-6em, -12.5em, -1.5em);
+    transform: translate3d(-6.5em, -12.5em, -1.5em);
   }
 `;
 

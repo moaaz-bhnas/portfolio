@@ -1,14 +1,14 @@
 import { memo } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import sizes from "../../../shared/sizes";
 
 const Viewport = ({ screenWidth }) => {
   return (
     <StyledViewport screenWidth={screenWidth}>
-      <P>Check my projects ..</P>
-      <Link href="https://github.com/moaaz-bhnas">
-        <Image src="/github.svg" alt="GitHub" />
-      </Link>
+      <HGroup>
+        <Title>Moaaz Bhnas</Title>
+        <SubTitle>Next.js | a11y developer</SubTitle>
+      </HGroup>
     </StyledViewport>
   );
 };
@@ -23,7 +23,7 @@ const turnOn = keyframes`
 `;
 
 const StyledViewport = styled.div`
-  padding: 0.8em 1em;
+  padding: 0.5em 0.75em;
   margin: auto;
   width: ${({ screenWidth }) => `${screenWidth - screenFrame(screenWidth)}em`};
   height: ${({ screenWidth }) =>
@@ -39,17 +39,20 @@ const StyledViewport = styled.div`
   animation: ${turnOn} 0s backwards 2s;
 `;
 
-const P = styled.p`
-  margin: 0 0 0.7em 0;
+const titleStyles = css`
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
 `;
 
-const Link = styled.a`
-  align-self: flex-end;
+const HGroup = styled.hgroup``;
+
+const Title = styled.h2`
+  ${titleStyles}
 `;
 
-const Image = styled.img`
-  width: 3em;
-  margin-right: 1em;
+const SubTitle = styled.h3`
+  ${titleStyles}
 `;
 
 export default memo(Viewport);

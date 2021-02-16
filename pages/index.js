@@ -4,7 +4,7 @@ import Workspace from "../components/Workspace/Index";
 export default function Home() {
   return (
     <>
-      <Title>Moaaz Bhnas</Title>
+      <Title>Portfolio</Title>
       <Workspace />
     </>
   );

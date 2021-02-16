@@ -1,6 +1,5 @@
 import { memo } from "react";
 import styled, { keyframes } from "styled-components";
-import About from "./components/About";
 
 const Papers = ({ width = 7 }) => {
   return (
@@ -8,9 +7,7 @@ const Papers = ({ width = 7 }) => {
       {Array(6)
         .fill(null)
         .map((element, index) => (
-          <Paper key={index} className={`paper-${index + 1}`}>
-            {index === 5 && <About />}
-          </Paper>
+          <Paper key={index} className={`paper-${index + 1}`} />
         ))}
     </StyledPapers>
   );
@@ -72,9 +69,6 @@ const Paper = styled.div`
   &.paper-6 {
     transform: rotateZ(0) translateZ(0.04em);
     transform-origin: 100% 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
   }
 `;
 
