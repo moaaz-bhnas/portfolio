@@ -42,6 +42,11 @@ const Face = styled.div`
 const Front = styled(Face)`
   width: 100%;
   height: 100%;
+  background-image: radial-gradient(
+    circle at 0% 100%,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   display: flex;
   flex-direction: column;
   transform: ${({ keyboardWidth }) =>
@@ -51,6 +56,8 @@ const Front = styled(Face)`
 const Back = styled(Face)`
   width: 100%;
   height: 100%;
+  box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.4),
+    0px -70px 20px rgba(0, 0, 0, 0.4);
   transform: ${({ keyboardWidth }) =>
     `rotateY(180deg) translateZ(${keyboardDepth(keyboardWidth) / 2}em)`};
 `;

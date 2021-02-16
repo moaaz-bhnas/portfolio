@@ -53,6 +53,11 @@ const Face = styled.div`
 const Front = styled(Face)`
   width: 100%;
   height: 100%;
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   display: flex;
   transform: ${({ screenWidth }) =>
     `translateZ(${screenDepth(screenWidth) / 2}em)`};

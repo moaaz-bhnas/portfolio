@@ -32,6 +32,7 @@ const StyledPortrait = styled.div`
   position: absolute;
   width: ${({ width }) => `${width}em`};
   height: ${({ width }) => `${portraitHeight(width)}em`};
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
   transform-origin: 50% -1.75em;
   transform: translate3d(16em, -18em, -18em);

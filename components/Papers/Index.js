@@ -52,6 +52,7 @@ const Paper = styled.div`
   height: 100%;
   padding: 0.7em;
   background-color: #fff;
+  box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 
   &.paper-1 {

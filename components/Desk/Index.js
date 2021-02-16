@@ -48,6 +48,11 @@ const Face = styled.div`
 const Front = styled(Face)`
   width: 100%;
   height: 100%;
+  background-image: radial-gradient(
+    circle at 0% 100%,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
 
   transform: ${({ deskWidth }) => `translateZ(${deskDepth(deskWidth) / 2}em)`};
 `;
@@ -71,6 +76,11 @@ const Top = styled(Face)`
 const Bottom = styled(Face)`
   width: 100%;
   height: ${({ deskWidth }) => `${deskDepth(deskWidth)}em`};
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
 
   transform: ${({ deskWidth }) =>
     `rotateX(-90deg) translateZ(${
