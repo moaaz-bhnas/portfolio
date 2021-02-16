@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback, useRef } from "react";
 import Desk from "../Desk/Index";
 import Laptop from "../Laptop/Index";
 import Nail from "../Nail/Index";
@@ -8,9 +8,28 @@ import SocialLinks from "../social/Index";
 import styled from "styled-components";
 
 const Workspace = () => {
+  const sceneRef = useRef();
+
+  /*
+  30 70
+  50 > 20
+  */
+
+  const handleMouseMove = useCallback((event) => {
+    const { pageX, pageY } = event;
+
+    const persX = pageX / window.innerWidth;
+    const persY = pageY / window.innerHeight;
+
+    const posX = persX * 30;
+    const posY = persY * 20;
+
+    sceneRef.current.style.perspectiveOrigin = `${posX + 35}% ${posY + 10}%`;
+  }, []);
+
   return (
-    <StyledWorkspace>
-      <Scene>
+    <StyledWorkspace onMouseMove={handleMouseMove}>
+      <Scene ref={sceneRef}>
         <Desk width={42.5} />
         <Laptop />
         <Nail />

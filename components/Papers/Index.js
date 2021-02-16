@@ -25,7 +25,7 @@ const StyledPapers = styled.div`
   width: ${({ width }) => `${width}em`};
   height: ${({ width }) => `${width * 1.4}em`};
   transform-style: preserve-3d;
-  transform: rotateX(90deg) translate3d(10em, 4em, 7em);
+  transform: rotateX(90deg) translate3d(10em, 4em, 6.2em);
 
   animation: ${slide} 1s backwards 1.8s;
 
