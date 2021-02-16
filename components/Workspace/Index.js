@@ -4,6 +4,7 @@ import Laptop from "../Laptop/Index";
 import Nail from "../Nail/Index";
 import Portrait from "../Portrait/Index";
 import Papers from "../Papers/Index";
+import SocialLinks from "../social/Index";
 import styled from "styled-components";
 
 const Workspace = () => {
@@ -15,13 +16,14 @@ const Workspace = () => {
         <Nail />
         <Portrait width={15} />
         <Papers width={8} />
+        <SocialLinks />
       </Scene>
     </StyledWorkspace>
   );
 };
 
 const StyledWorkspace = styled.div`
-  font-size: 0.5rem;
+  font-size: 1rem !important;
   position: relative;
   height: 100vh;
   display: flex;
