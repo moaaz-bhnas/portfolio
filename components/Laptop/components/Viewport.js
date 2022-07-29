@@ -7,7 +7,7 @@ const Viewport = ({ screenWidth }) => {
     <StyledViewport screenWidth={screenWidth}>
       <HGroup>
         <Title>Moaaz Bhnas</Title>
-        <SubTitle>Next.js | a11y developer</SubTitle>
+        <SubTitle>React.js developer</SubTitle>
       </HGroup>
     </StyledViewport>
   );
