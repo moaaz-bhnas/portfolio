@@ -41,7 +41,7 @@ const StyledViewport = styled.div`
 
 const titleStyles = css`
   font-size: 1rem;
-  margin: 0;
+  margin: 0 0 0.2rem;
   font-weight: 400;
 `;
 
